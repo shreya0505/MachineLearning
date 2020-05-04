@@ -4,7 +4,8 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from numpy import argmax
 from sklearn.impute import SimpleImputer
-from sklearn.preprocessing import LabelEncoder, OneHotEncoder
+from sklearn.preprocessing import LabelEncoder, OneHotEncoder, StandardScaler
+
 
 filename = './Datasets/Data2.csv'
 dataset = pd.read_csv(filename)
@@ -40,9 +41,17 @@ labelencoder_y = LabelEncoder()
 y =labelencoder_y.fit_transform(y)
 #print(y)
 
+
 # Encoding the Dependent Variable
 X_train, X_validation, Y_train, Y_validation = train_test_split(X, y, test_size=0.20, random_state=1)
 # print(X_train)
 # print(X_validation)
 # print(Y_train)
 # print(Y_validation)
+
+sc_X = StandardScaler()
+X_train[:, 3:] = sc_X.fit_transform(X_train[:, 3:])
+X_validation[:, 3:] = sc_X.transform(X_validation[:, 3:])
+# print(X_train)
+# print(X_validation)
+
