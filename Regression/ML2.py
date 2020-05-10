@@ -7,7 +7,7 @@ from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder, StandardScaler
 
 
-filename = './Datasets/Data2.csv'
+filename = '../Datasets/Data2.csv'
 dataset = pd.read_csv(filename)
 
 array = dataset.values

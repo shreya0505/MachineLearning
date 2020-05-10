@@ -8,7 +8,7 @@ from sklearn.preprocessing import LabelEncoder, OneHotEncoder, StandardScaler
 from sklearn.linear_model import LinearRegression
 
 
-filename = './Datasets/Data3.csv'
+filename = '../Datasets/Data3.csv'
 dataset = pd.read_csv(filename)
 
 array = dataset.values
